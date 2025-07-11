@@ -1,5 +1,5 @@
-describe("Verify Test Cases Page", () => {
-  it("Переход на страницу тест кейсов", () => {
+describe("Verify All Products and product detail page", () => {
+  it("Проверка всех продуктов и сведений о продукте", () => {
     cy.visit("https://automationexercise.com/");
     cy.contains("AutomationExercise");
     cy.contains("Products").click();
