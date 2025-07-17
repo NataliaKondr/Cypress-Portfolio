@@ -23,3 +23,16 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import { locators as loc } from '../support/locators';
+Cypress.Commands.add('openHomePage', () => {  
+    cy.visit('/') // Открытие главной страницы  
+    cy.contains('AutomationExercise') // Проверка, что страница загрузилась
+});
+Cypress.Commands.add('openTestCasesPage', () => {  
+    cy.contains(loc.HomePageLocators.testCasesLink, 'Test Cases').click(); 
+     cy.contains("Test Cases")
+});
+Cypress.Commands.add('openLoginPage', () => {  
+    cy.get(loc.HomePageLocators.signupLoginLink).click() 
+    cy.contains('New User Signup!')
+});

@@ -1,8 +1,7 @@
-describe("Verify Test Cases Page", () => {
-    it("Переход на страницу тест кейсов", () => {
-      cy.visit("https://automationexercise.com/");
-      cy.contains("AutomationExercise");
-      cy.contains('Test Cases').click();
-      cy.contains('Test Cases');
-    });
-});
+import '../support/commands'
+describe('Verify Test Cases Page', () => {
+  it('Verify Test Cases Page', () => {    
+    cy.openHomePage();    
+    cy.openTestCasesPage();
+  });
+})

@@ -1,12 +1,20 @@
-describe("Login User with incorrect email and password", () => {
-    it("Попытка авторизации незарегистрированного пользователя", () => {
-      cy.visit("https://automationexercise.com/");
-      cy.contains("AutomationExercise");
-      cy.get(".fa.fa-lock").click();
-      cy.contains("Login to your account");
-      cy.get('[data-qa="login-email"]').type("kondratev@yandex.ru");
-      cy.get('[data-qa="login-password"]').type("Lagavo44");
-      cy.get('[data-qa="login-button"]').click();
-      cy.contains("Your email or password is incorrect!");
+import { locators as loc } from '../support/locators';
+import {  
+  generateEmail,  
+  generatePassword,
+} from '../support/generateUserData';
+import '../support/commands';
+
+describe('Verify that home page is visible successfully', () => {  
+  it('Verify that home page is visible successfully', () => {   
+     const email = generateEmail('Fake', 'User');   
+     const password = generatePassword();    
+     cy.openHomePage();    
+     cy.get(loc.HomePageLocators.signupLoginLink).click();    
+     cy.contains("Login to your account");    
+     cy.get(loc.LoginPageLocators.emailInput).type(email);    
+     cy.get(loc.LoginPageLocators.passwordInput).type(password);    
+     cy.get(loc.LoginPageLocators.loginButton).click();    
+     cy.contains("Your email or password is incorrect!");  
     });
-});
+  });

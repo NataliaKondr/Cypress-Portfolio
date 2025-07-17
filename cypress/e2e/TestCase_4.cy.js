@@ -1,9 +1,8 @@
+import '../support/commands'
 describe("Logout User", () => {
-    it("Выход пользователя", () => {
-      cy.visit("https://automationexercise.com/");
-      cy.contains("AutomationExercise");
-      cy.get(".fa.fa-lock").click();
-      cy.contains("Login to your account");
+    it("Logout User", () => {
+      cy.openHomePage();
+      cy.openLoginPage();
       cy.get('[data-qa="login-email"]').type("kondrateva86121610@yandex.ru");
       cy.get('[data-qa="login-password"]').type("Lagavo44");
       cy.get('[data-qa="login-button"]').click();
