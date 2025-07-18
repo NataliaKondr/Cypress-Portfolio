@@ -1,0 +1,21 @@
+{
+  "firstName": "Charity",
+  "lastName": "Jaskolski",
+  "fullName": "Charity Jaskolski",
+  "email": "Charity_Jaskolski41@gmail.com",
+  "password": "pehahekuwi",
+  "details": {
+    "company": "White LLC",
+    "address": "549 Charity Heights Apt. 223",
+    "city": "Durgancester",
+    "country": "Australia",
+    "state": "California",
+    "zip": "87440",
+    "mobile": "1-832-856-5123 x08186",
+    "dateOfBirth": {
+      "day": "10",
+      "month": "June",
+      "year": "1967"
+    }
+  }
+}
